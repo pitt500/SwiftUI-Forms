@@ -38,7 +38,7 @@ struct ContentView: View {
             }.fixedSize()
             
           }
-        }
+        }.padding(.top)
         
         Section {
           Toggle(isOn: $isEnableUntilTomorrow) {
@@ -56,7 +56,14 @@ struct ContentView: View {
             Slider(value: $sliderValue)
           }
         }
+        
+        Section(header: Text("Apps")) {
+          ForEach(1...10, id: \.hashValue) { index in
+            Text("\(index)")
+          }
+        }
       }
+      .navigationBarTitle("Settings", displayMode: .inline)
     }
   }
 }
