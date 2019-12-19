@@ -21,17 +21,15 @@ struct ContentView: View {
           Toggle(isOn: $isScheduled) {
             Text("Scheduled")
           }
-          VStack {
-            HStack {
+          HStack {
+            VStack {
               Text("From")
-              Spacer()
-              Text("Sunset")
-                .foregroundColor(Color.blue)
-            }
-            
-            HStack {
               Text("To")
-              Spacer()
+            }
+            Spacer()
+            VStack {
+              Text("Sunset")
+              .foregroundColor(Color.blue)
               Text("Sunrise")
                 .foregroundColor(Color.blue)
             }
