@@ -12,7 +12,7 @@ struct ContentView: View {
   
   @State private var isScheduled = false
   @State private var isEnableUntilTomorrow = false
-  @State private var sliderValue: Double = 0
+  @State private var sliderValue: Double = 0.5
   
   var body: some View {
     NavigationView {
@@ -27,12 +27,16 @@ struct ContentView: View {
               Text("To")
             }
             Spacer()
-            VStack {
-              Text("Sunset")
-              .foregroundColor(Color.blue)
-              Text("Sunrise")
+            
+            NavigationLink(destination: Text("Hello")) {
+              VStack {
+                Text("Sunset")
                 .foregroundColor(Color.blue)
-            }
+                Text("Sunrise")
+                  .foregroundColor(Color.blue)
+              }
+            }.fixedSize()
+            
           }
         }
         
@@ -48,7 +52,7 @@ struct ContentView: View {
               Text("Less Warm")
               Spacer()
               Text("More Warm")
-            }
+            }.padding(EdgeInsets(top: 10, leading: 4, bottom: 0, trailing: 4))
             Slider(value: $sliderValue)
           }
         }
